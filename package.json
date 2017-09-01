@@ -1,0 +1,50 @@
+{
+  "name": "Youtube-Downloader",
+  "version": "0.0.1",
+  "description": "This is a Youtube Downloading Application",
+  "main": "index.js",
+  "homepage": "example.com",
+  "repository": {
+    "url": "example.com"
+  },
+  "author": {
+    "name": "darthvader",
+    "email": "darthvader@mail.tekhub.net",
+    "url": "example.com"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "build"
+  },
+  "license": "GPLv3",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "electron-context-menu": "^0.9.1",
+    "electron-editor-context-menu": "^1.1.1",
+    "ffmpeg-static": "^2.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "jquery": "^3.2.1",
+    "path": "^0.12.7",
+    "remote": "^0.2.6",
+    "spin": "0.0.1",
+    "ytdl-core": "^0.17.0"
+  },
+  "devDependencies": {
+    "7zip-bin-linux": "^1.1.0",
+    "ajv": "^5.2.2",
+    "electron": "^1.7.5",
+    "electron-builder": "^19.24.1"
+  },
+  "build": {
+    "appId": "com.darthvader.youtube-downloader",
+    "win": {
+      "target": "nsis",
+      "icon": "build/assets/icons/256x256.ico"
+    },
+    "linux": {
+      "target": "deb",
+      "category": "AudioVideo",
+      "icon": "build/assets/icons/"
+    }
+  }
+}

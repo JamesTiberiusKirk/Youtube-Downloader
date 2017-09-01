@@ -1,0 +1,69 @@
+.img_div{
+  float: right;
+  width: 50%;
+}
+.btn_div{
+  float: left;
+  width: 50%;
+  /*padding: 10px;*/
+}
+.link_div{
+  float: left;
+  width: 87%;
+}
+.btnGo_div{
+  float: right;
+  width: 10%;
+  /*padding: 10px;*/
+}
+body{
+  background-color: #182e3f;
+}
+.main_bdy{
+  margin: 5px;
+  text-align:center;
+  /*background-color:blue;*/
+  height:100%;
+  width:100%;
+}
+.optSpan{
+  width: 300px;
+  height: 10px;
+  border: black
+}
+.optionsDiv{
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+.myProgress {
+    width: 100%;
+}
+.progressBar {
+    height: 5px;
+    background-color: #45B6F6;
+    position:fixed;  
+    width:100%; 
+    bottom: 0%;
+}
+.percent{
+    color: white;
+    text-align: center;
+}
+.vidTitle{
+    color: white;
+}
+.leftDiv .rightDiv{
+    width:20%;
+    float:left;
+}
+.spinner{
+    width:60%;
+    float:left;
+}
+.footer{
+    position:fixed;  
+    width:100%; 
+    height:35px; 
+    bottom:0px;
+}
