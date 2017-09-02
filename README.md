@@ -1,5 +1,5 @@
 # Youtube-Downloader
-===
+
 
 This is an Electron App which uses ytdl-core and ffmpeg (along with other libraries) in order to create a simple and intuitive cross-platform desktop application which lets you download youtube videos. 
 
