@@ -1,6 +1,6 @@
 {
   "name": "Youtube-Downloader",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This is a Youtube Downloading Application",
   "main": "index.js",
   "homepage": "example.com",
