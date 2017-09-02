@@ -35,7 +35,7 @@ var dlStarted = false;
 var icon = getIconPath();
 
 //TODO: #Feature Add the current download speed (need to see if i can do it from fs)
-//TODO: #Feature Add the length of the video 
+//TODO: #Feature Add the length of the video to the option loading process
 //TODO: #Feature Add a tickbox for downloading audio only
 //TODO: #Feature Add error detection and remove/cleanup the tmp folder before exiting
 //TODO: #Feature Add Support for multiple dounloads, or queing of downloads
