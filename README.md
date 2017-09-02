@@ -7,10 +7,10 @@ Screenshot:
 
 ![screenshot from 2017-09-01 22-14-14](https://user-images.githubusercontent.com/17408117/29988065-4013d91a-8f63-11e7-88d8-ddf5f0d8dafc.png)
 
-##Currently Supported:
+## Currently Supported:
 At the moment, only Windows and Linux is accesible to me, so only these platforms are developed for. So far I havent even got an entry in the build options to build for MacOS.
 
-##Building:  
+## Building:  
 `git clone https://github.com/JamesTiberiusKirk/Youtube-Downloader`  
 `cd Youtube-Downloader`  
 `npm install`  
