@@ -15,4 +15,4 @@ At the moment, only Windows and Linux is accesible to me, so only these platform
 `cd Youtube-Downloader`  
 `npm install`  
 `npm run dist`  
-**Note:** at the moment, for some reason the build is only building for the current operating system (if you're building on ubunu, you will only get a .deb)
+**Note:** at the moment, for some reason the build is only building for the current operating system (if you're building on ubunu, you will only get only a .deb)
