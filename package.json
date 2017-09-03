@@ -42,9 +42,13 @@
       "icon": "build/assets/icons/256x256.ico"
     },
     "linux": {
-      "target": "deb",
+      "target": ["deb","snap"],
       "category": "AudioVideo",
       "icon": "build/assets/icons/"
     }
+  },
+  "snap":{
+    "grade": "stable",
+    "confinment": "strict"
   }
 }

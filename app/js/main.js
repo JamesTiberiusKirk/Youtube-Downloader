@@ -21,7 +21,8 @@ var vidInfo={
   filename: null,
   container: null,
   size: null, //not used yet
-  length: null, //not used yet
+  lengthSeconds: null,
+  lengthTime: null,
   description: null, //not used
   quality: []
 }
@@ -96,6 +97,18 @@ function getTmpDir(){
   return rtrnString;
 }
 
+function getLengthTime(){
+  var sec_num = vidInfo.lengthSeconds; 
+  var hours   = Math.floor(sec_num / 3600);
+  var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+  var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+  if (hours   < 10) {hours   = "0"+hours;}
+  if (minutes < 10) {minutes = "0"+minutes;}
+  if (seconds < 10) {seconds = "0"+seconds;}
+  return hours+':'+minutes+':'+seconds;
+}
+
 ////////////////////////////////// Button fucntions
 
 //Getts trigered when the go button is clicked
@@ -126,7 +139,7 @@ function btnDl(){
   }
 }
 
-//////////////////////////////// App logic and core functions
+///////////////////////////////// App logic and core functions
 
 //getting information about the video and setting it to specific variables
 function setVidInfo(url){
@@ -135,7 +148,9 @@ function setVidInfo(url){
     vidInfo.title = info.title;
     vidInfo.filename = titleFilter(vidInfo.title);
     vidInfo.url = info.vieo_url;
-    vidInfo.thumbnail = "https://img.youtube.com/vi/"+vidInfo.id+"/hqdefault.jpg"; //info.thumbnail_url;
+    vidInfo.thumbnail = info.iurlmaxres;
+    vidInfo.lengthSeconds = info.length_seconds;
+    vidInfo.lengthTime = getLengthTime();
     vidInfo.description = info.description;
     for(a = 0 ; a <= info.formats.length; a++ ){
       vidInfo.quality[a] = info.formats[a];
@@ -349,7 +364,10 @@ function optLoad(){
     <h3 class="vidTitle">'+vidInfo.title+'</h3> \
       <div class="col-sm-2 img_div"> \
         <br> \
-        <img src="'+vidInfo.thumbnail+'" class="" alt="" width="100%" heigth="100%"> \
+        <div class="thumbnail"> \
+          <img src="'+vidInfo.thumbnail+'" class="" alt="" width="100%" heigth="100%"> \
+          <h3 class="thumbnailTitle">Length: '+vidInfo.lengthTime+'</h3> \
+        </div> \
       </div> \
       <div class="col-sm-2 btn_div"> \
         <br> \

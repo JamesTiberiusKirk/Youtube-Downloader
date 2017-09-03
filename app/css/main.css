@@ -67,3 +67,23 @@ body{
     height:35px; 
     bottom:0px;
 }
+.thumbnail{
+    position: relative;
+    width: 100%;
+}
+.thumbnailTitle{
+    position: absolute;
+    bottom: -5px;
+    left: 5px;
+    /* width: 50%; */
+    color: white; 
+    font: bold 14px/35px Helvetica, Sans-Serif; 
+    letter-spacing: -1px;  
+    background: rgba(0, 0, 0, 0.8);
+    padding-left: 5px; 
+    padding-right: 5px;
+    border-radius: 5px;
+}
+.destription{
+    color: white;
+}
