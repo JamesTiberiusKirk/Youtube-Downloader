@@ -15,5 +15,5 @@ At the moment, only Windows and Linux is accesible to me, so only these platform
 `cd Youtube-Downloader`  
 `npm install`  
 `npm run dist`  
-**Linux:** to be able to build a snap, you need to install the `snapcraft` package on youre system
+**Linux:** to be able to build a snap, you need to install the `snapcraft` package on youre system.  
 **Note:** at the moment, for some reason the build is only building for the current operating system (if you're building on ubunu, you will only get only a .deb and a snap)
