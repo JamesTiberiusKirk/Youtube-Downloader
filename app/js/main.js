@@ -23,7 +23,7 @@ var vidInfo={
   size: null, //not used yet
   lengthSeconds: null,
   lengthTime: null,
-  description: null, //not used
+  description: null,
   quality: []
 }
 var userHome = getUserHome();
