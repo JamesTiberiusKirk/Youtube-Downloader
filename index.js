@@ -1,7 +1,6 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
-const {ipcMain} = require('electron')
 
 require('electron-context-menu')({
   // prepend: params => [],
@@ -51,9 +50,10 @@ function createWindow () {
 
   //Being able to drag a link on the app
   mainWindow.webContents.on('will-navigate',(e, url) => {
+    const {ipcMain} = require('electron');    
     e.preventDefault();
-    ipcMain('dragNdrop',url);
     console.log(url);
+    ipcMain('dragNdrop',url);
   })
 }
 // This method will be called when Electron has finished

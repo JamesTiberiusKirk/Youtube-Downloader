@@ -1,16 +1,16 @@
 {
   "name": "Youtube-Downloader",
-  "version": "1.0.0",
-  "description": "This is a Youtube Downloading Application",
+  "version": "1.1.1",
+  "description": "This is a Youtube video downloading application",
   "main": "index.js",
-  "homepage": "example.com",
+  "homepage": "https://github.com/JamesTiberiusKirk/Youtube-Downloader",
   "repository": {
-    "url": "example.com"
+    "url": "https://github.com/JamesTiberiusKirk/Youtube-Downloader"
   },
   "author": {
-    "name": "darthvader",
-    "email": "darthvader@mail.tekhub.net",
-    "url": "example.com"
+    "name": "Dumitru Vulpe ",
+    "email": "dumitru.v.dv@gmail.com",
+    "url": "https://github.com/JamesTiberiusKirk"
   },
   "scripts": {
     "start": "electron .",
@@ -36,19 +36,22 @@
     "electron-builder": "^19.24.1"
   },
   "build": {
-    "appId": "com.darthvader.youtube-downloader",
+    "appId": "com.jamestiberiuskirt.youtube-downloader",
     "win": {
       "target": "nsis",
       "icon": "build/assets/icons/256x256.ico"
     },
     "linux": {
-      "target": ["deb","snap"],
+      "target": ["deb"],
       "category": "AudioVideo",
       "icon": "build/assets/icons/"
+    },
+    "deb":{
+      "compression": "gz",
+      "icon": "build/assets/icons/256x256.png"
+    },
+    "snap":{
+      "grade": "stable"
     }
-  },
-  "snap":{
-    "grade": "stable",
-    "confinment": "strict"
   }
 }
