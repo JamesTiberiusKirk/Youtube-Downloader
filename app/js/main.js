@@ -100,7 +100,6 @@ function getLengthTime(){
   var hours   = Math.floor(sec_num / 3600);
   var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
   var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
   if (hours   < 10) {hours   = "0"+hours;}
   if (minutes < 10) {minutes = "0"+minutes;}
   if (seconds < 10) {seconds = "0"+seconds;}
@@ -129,7 +128,7 @@ function btnDl(){
     var tmpDir      = envTmpDir+"/youtube-dl-";    
     fs.mkdtemp(`${tmpDir}`, (err, folder) => {
       if (err) throw err;
-      tmpFolder     =folder;
+      tmpFolder     = folder;
       vidDl(yt_link.value);
     });
   }else{
@@ -146,29 +145,18 @@ function setVidInfo(url){
     vidInfo.title         = info.title;
     vidInfo.filename      = titleFilter(vidInfo.title);
     vidInfo.url           = info.vieo_url;
-    //TODO: #Issue check if the image exists first
-    if (info.iurlmaxres   != "undefined"){
-      vidInfo.thumbnail   = info.iurlmaxres;
-    }else if (info.iurlhq != "undefined"){
-      vidInfo.thumbnail   = info.iurlhq;
-    }else if (info.iurlhq720p != "undefined"){
-      vidInfo.thumbnail   = info.iurlhq720p;
-    }else if (info.iurlmq != "undefined"){
-      vidInfo.thumbnail   = info.iurlmq;
-    }else if (info.iurl   != "undefined"){
-      vidInfo.thumbnail   = info.iurl;
-    }else{
-      console.log("shit");
-      console.log(info);
-    }
+    if (info.iurlmaxres   != "undefined"){      vidInfo.thumbnail   = info.iurlmaxres;
+    }else if (info.iurlhq != "undefined"){      vidInfo.thumbnail   = info.iurlhq;
+    }else if (info.iurlhq720p != "undefined"){  vidInfo.thumbnail   = info.iurlhq720p;
+    }else if (info.iurlmq != "undefined"){      vidInfo.thumbnail   = info.iurlmq;
+    }else if (info.iurl   != "undefined"){      vidInfo.thumbnail   = info.iurl;
+    }else{  console.log("shit");  console.log(info); }
       
 
     vidInfo.lengthSeconds = info.length_seconds;
     vidInfo.lengthTime    = getLengthTime();
     vidInfo.description   = info.description;
-    for(a = 0 ; a <= info.formats.length; a++ ){
-      vidInfo.quality[a]  = info.formats[a];
-    }
+    for(a = 0 ; a <= info.formats.length; a++ ){ vidInfo.quality[a]  = info.formats[a]; }
     optLoad();
   });
 }
@@ -257,11 +245,9 @@ function merge(vidPath, audioPath, finishedVidPath){
       body:"Download Finished"
     });
     notification.onclick = () => {
-      var tmp        = targetPath.replace(/\\/, "\\\\");      
-      console.log(tmp);
-      console.log(shell.showItemInFolder(tmp+filename));
+      var tmp        = targetPath.replace(/\\/, "\\\\"); 
     };
-    dlStarted=false;
+    dlStarted        = false;
     clean(tmpFolder);
   });
   vidMerge.output(finishedVidPath);
@@ -322,11 +308,8 @@ function progBar() {
   var width         = 0;
   id = setInterval(frame, 10);
   function frame() {  
-    if (width >= 105) {
-      speed = -2;
-    } else if (width <= 0){
-      speed = 2;
-    }
+    if (        width >= 105) { speed = -2;
+    } else if ( width <= 0){    speed = 2;  }
     width += speed;
     elem.style.width = width + '%';    
   }
@@ -393,9 +376,7 @@ function optLoad(){
     var rezIsDeclared=false;
     try{vidInfo.quality[i].resolution;}
     catch(e) {
-      if(e.name != "undefined") {
-        rezIsDeclared = true;
-      }
+      if(e.name != "undefined") { rezIsDeclared = true; }
     }
     if(!rezIsDeclared){
       if(vidInfo.quality[i].resolution == null){
@@ -422,9 +403,7 @@ function optLoad(){
 
     try{vidInfo.quality[i].resolution;}
     catch(e) {
-      if(e.name != "undefined") {
-        rezIsDeclared = false;
-      }
+      if(e.name != "undefined") {rezIsDeclared = false;}
     }
 
     if(rezIsDeclared){
@@ -447,7 +426,7 @@ function optLoad(){
       </div> \
     </div> \
   </div>';
-  optDiv.innerHTML  =divHTML;
+  optDiv.innerHTML  = divHTML;
   var footer        = document.getElementById("footer");
   footer.innerHTML  = ' ';
 }
