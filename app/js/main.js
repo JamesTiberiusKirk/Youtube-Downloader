@@ -58,6 +58,9 @@ function getIconPath(){
   
 }
 
+
+//TODO: #ISSUE app cant get to ffmpeg from packaged state
+
 //Gets the unpacked asar archive path for FFmpeg
 function getFfmpegPath(){
   var path = getFfmpeg.path.split("app.asar");
@@ -65,6 +68,7 @@ function getFfmpegPath(){
     return path[0]+"app.asar.unpacked"+path[1];
     console.log(path[0]+"app.asar.unpacked"+path[1]);
   }else{  
+    console.log(path[0]+"app.asar.unpacked"+path[1]);    
     return getFfmpeg.path;
   }
 }
@@ -141,15 +145,15 @@ function btnDl(){
 //getting information about the video and setting it to specific variables
 function setVidInfo(url){
   ytdl.getInfo(url,(err, info) => {
+    //console.log(info);
     vidInfo.id            = info.video_id;
     vidInfo.title         = info.title;
     vidInfo.filename      = titleFilter(vidInfo.title);
     vidInfo.url           = info.vieo_url;
-    if (info.iurlmaxres   != "undefined"){      vidInfo.thumbnail   = info.iurlmaxres;
-    }else if (info.iurlhq != "undefined"){      vidInfo.thumbnail   = info.iurlhq;
-    }else if (info.iurlhq720p != "undefined"){  vidInfo.thumbnail   = info.iurlhq720p;
-    }else if (info.iurlmq != "undefined"){      vidInfo.thumbnail   = info.iurlmq;
-    }else if (info.iurl   != "undefined"){      vidInfo.thumbnail   = info.iurl;
+    if (info.iurlhq != "undefined"){      vidInfo.thumbnail   = info.iurlhq;
+    }else if (info.iurlhq720p != "undefined"){  vidInfo.thumbnail   = info.iurlhq720p; 
+    }else if (info.iurlmq != "undefined"){      vidInfo.thumbnail   = info.iurlmq; 
+    }else if (info.iurl   != "undefined"){      vidInfo.thumbnail   = info.iurl; 
     }else{  console.log("shit");  console.log(info); }
       
 
@@ -348,7 +352,7 @@ function dlProgBar(txt, i) {
 }
 
 //This pushes the relevant video info to HTML
-//TODO: #Feature Add support for more then 1440p, some 4k videos show up
+//TODO: #Feature Add support for more then 1440p, some 4k videos do show up
 //TODO: ...Probably to gonna have to also look into downloading different container types
 function optLoad(){
   var optDiv    = document.getElementById("optionsDiv");
