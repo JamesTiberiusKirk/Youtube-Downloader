@@ -31,6 +31,8 @@
   },
   "devDependencies": {
     "7zip-bin-linux": "^1.1.0",
+    "7zip-bin-mac": "^1.0.1",
+    "7zip-bin-win": "^2.1.1",
     "ajv": "^5.2.2",
     "electron": "^1.7.5",
     "electron-builder": "^19.24.1"
@@ -42,16 +44,15 @@
       "icon": "build/assets/icons/256x256.ico"
     },
     "linux": {
-      "target": ["deb", "snap"],
+      "target": [
+        "deb"
+      ],
       "category": "AudioVideo",
       "icon": "build/assets/icons/"
     },
-    "deb":{
+    "deb": {
       "compression": "gz",
-      "icon": "build/assets/icons/256x256.png"
-    },
-    "snap":{
-      "grade": "stable"
+      "icon": "./build/assets/icons/256x256.png"
     }
   }
 }
