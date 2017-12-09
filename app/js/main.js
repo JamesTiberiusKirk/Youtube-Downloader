@@ -351,9 +351,7 @@ function dlProgBar(txt, i) {
   }
 }
 
-//This pushes the relevant video info to HTML
-//TODO: #Feature Add support for more then 1440p, some 4k videos do show up
-//TODO: ...Probably to gonna have to also look into downloading different container types
+//This pushes the relevant HTML for video info to DOM
 function optLoad(){
   var optDiv    = document.getElementById("optionsDiv");
   var divHTML   = '\

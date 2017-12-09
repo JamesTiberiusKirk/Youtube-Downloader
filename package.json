@@ -1,6 +1,6 @@
 {
   "name": "Youtube-Downloader",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "This is a Youtube video downloading application",
   "main": "index.js",
   "homepage": "https://github.com/JamesTiberiusKirk/Youtube-Downloader",
@@ -38,6 +38,10 @@
     "electron-builder": "^19.24.1"
   },
   "build": {
+    "extraResources": [
+      "node_modules/ffmpeg-static",
+      "build"
+    ],
     "appId": "com.jamestiberiuskirt.youtube-downloader",
     "win": {
       "target": "nsis",
