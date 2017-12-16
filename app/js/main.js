@@ -31,16 +31,17 @@ var userHome      = getUserHome();
 var targetPath    = userHome+"/Downloads/";
 var tmpFolder;
 var ffmpegPath    = getFfmpegPath();
-var id;           //used for progress bar interval id
+var id;                     //used for progress bar interval id
 var firstUse      = false; //not used
 var dlStarted     = false;
 var icon          = getIconPath();
 
 //TODO: #Feature Add the current download speed (need to see if i can do it from fs)
-//TODO: #Feature Add a tickbox for downloading audio only
+//TODO: #Feature Add a tickbox for downloading video/audio only
 //TODO: #Feature Add error detection and remove/cleanup the tmp folder before exiting
-//TODO: #Feature Add Support for multiple dounloads, or queing of downloads
+//TODO: #Feature Add support for multiple dounloads, or queing of downloads
 //TODO: #Feature Look into adding some form of description 
+//TODO: #Feature Look into adding some sort of settings page 
 
 /////////////////////////// All of the gets
 
@@ -55,11 +56,7 @@ function getIconPath(){
   
   // return "../build/assets/icons/256x256.png";
   // return imgPath;
-  
 }
-
-
-//TODO: #ISSUE app cant get to ffmpeg from packaged state
 
 //Gets the unpacked asar archive path for FFmpeg
 function getFfmpegPath(){

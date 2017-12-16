@@ -8,7 +8,7 @@ Screenshot:
 ![screenshot from 2017-09-03 21-45-55](https://user-images.githubusercontent.com/17408117/30006485-806fea96-90f1-11e7-8fc9-d3a729910fc0.png)  
 
 ## Currently Supported:
-At the moment, only Windows and Linux is accesible to me, so only these platforms are developed for. So far I havent even got an entry in the build options to build for MacOS.
+At the moment, only Windows and Linux are accesible to me, so only these platforms are developed for. So far I haven't even got an entry in the build options to build for MacOS.
 
 ## Building:  
 `git clone https://github.com/JamesTiberiusKirk/Youtube-Downloader`  
