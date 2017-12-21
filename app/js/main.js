@@ -65,10 +65,10 @@ function getIconPath(){
 function getFfmpegPath(){
   var path = getFfmpeg.path.split("app.asar");
   if( typeof path === '[object Array]' ) {
-    return path[0]+"app.asar.unpacked"+path[1];
-    console.log(path[0]+"app.asar.unpacked"+path[1]);
-  }else{  
     console.log(path[0]+"app.asar.unpacked"+path[1]);    
+    return path[0]+"app.asar.unpacked"+path[1];
+  }else{  
+    console.log(getFfmpeg.path);    
     return getFfmpeg.path;
   }
 }
