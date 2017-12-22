@@ -31,7 +31,7 @@ var userHome      = getUserHome();
 var targetPath    = userHome+"/Downloads/";
 var tmpFolder;
 var ffmpegPath    = getFfmpegPath();
-var id;                     //used for progress bar interval id
+var id;                    //used for progress bar interval id
 var firstUse      = false; //not used
 var dlStarted     = false; //TODO: find a better way to implement this
 var icon          = getIconPath();
@@ -47,7 +47,6 @@ var icon          = getIconPath();
 
 //Gets the unpacked asar archine path for icon
 //TODO: #Issue resolve isnt getting full resolved path
-//TODO: UNIFISHED
 function getIconPath(){
   var relPath = path.resolve("../build/assets/icons/256x256.png");
   var resPath = relPath.split("app.asar");
@@ -58,16 +57,14 @@ function getIconPath(){
   // return imgPath;
 }
 
-//TODO: #ISSUE app cant get to ffmpeg from packaged state
 //Gets the unpacked asar archive path for FFmpeg
 function getFfmpegPath(){
   var path = getFfmpeg.path.split("app.asar");
-  // console.log(getFfmpeg.path());
   if( typeof path === '[object Array]' ) {
-    console.log(path[0]+"app.asar.unpacked"+path[1]);    
+    // console.log(path[0]+"app.asar.unpacked"+path[1]);    
     return path[0]+"app.asar.unpacked"+path[1];
   }else{  
-    console.log(getFfmpeg.path);    
+    // console.log(getFfmpeg.path);    
     return getFfmpeg.path;
   }
 }
@@ -103,9 +100,11 @@ function getLengthTime(){
   var hours   = Math.floor(sec_num / 3600);
   var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
   var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
   if (hours   < 10) {hours   = "0"+hours;}
   if (minutes < 10) {minutes = "0"+minutes;}
   if (seconds < 10) {seconds = "0"+seconds;}
+  
   return hours+':'+minutes+':'+seconds;
 }
 
@@ -135,7 +134,7 @@ function btnDl(){
       vidDl(yt_link.value);
     });
   }else{
-    progBarTxt("cunt");
+    progBarTxt("Wait for the first video to finish.");
   }
 }
 
@@ -235,6 +234,7 @@ function merge(vidPath, audioPath, finishedVidPath){
     progBarTxt("Merging");
     console.log("merging");
   });
+  //TODO: #Issue This is where the the windows ffmpeg error occurs (it doesnt like weird filenames)
   vidMerge.on('error', (err) => {console.log('An error occurred: ' + err);});
   vidMerge.on('end', () => {
     console.log('Final video created!');
@@ -278,6 +278,7 @@ function clean(path){
 };
 
 //Enabling Drag and Drop for Links
+//TODO: need to finish
 //EXPERIMENTAL
 ipcRenderer.on('dragNdrop', function (url){
   const tmpDir = '/tmp/youtube-dl-';
@@ -297,7 +298,7 @@ $(window).keydown((e) => {
   }
 });
 
-/////////////////////////////// UI PART
+/////////////////////////////// UI PART ---- NEEDS TO BE RE-DONE (maybe in reactjs)
 
 //This is for loading the progress bar
 function progBar() {
