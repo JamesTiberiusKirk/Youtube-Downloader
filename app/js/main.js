@@ -33,7 +33,7 @@ var tmpFolder;
 var ffmpegPath    = getFfmpegPath();
 var id;           //used for progress bar interval id
 var firstUse      = false; //not used
-var dlStarted     = false;
+var dlStarted     = false; //TODO: find a better way to implement this
 var icon          = getIconPath();
 
 //TODO: #Feature Add the current download speed (need to see if i can do it from fs)
@@ -60,10 +60,10 @@ function getIconPath(){
 
 
 //TODO: #ISSUE app cant get to ffmpeg from packaged state
-
 //Gets the unpacked asar archive path for FFmpeg
 function getFfmpegPath(){
   var path = getFfmpeg.path.split("app.asar");
+  // console.log(getFfmpeg.path());
   if( typeof path === '[object Array]' ) {
     console.log(path[0]+"app.asar.unpacked"+path[1]);    
     return path[0]+"app.asar.unpacked"+path[1];

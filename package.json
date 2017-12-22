@@ -52,7 +52,7 @@
     },
     "deb": {
       "compression": "gz",
-      "icon": "./build/assets/icons/256x256.png"
+      "icon": "build/assets/icons/256x256.png"
     }
   }
 }
