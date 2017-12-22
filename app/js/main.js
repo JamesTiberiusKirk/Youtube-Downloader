@@ -148,7 +148,7 @@ function setVidInfo(url){
     vidInfo.title         = info.title;
     vidInfo.filename      = titleFilter(vidInfo.title);
     vidInfo.url           = info.vieo_url;
-    if (info.iurlhq != "undefined"){      vidInfo.thumbnail   = info.iurlhq;
+    if       (info.iurlhq != "undefined"){      vidInfo.thumbnail   = info.iurlhq;
     }else if (info.iurlhq720p != "undefined"){  vidInfo.thumbnail   = info.iurlhq720p; 
     }else if (info.iurlmq != "undefined"){      vidInfo.thumbnail   = info.iurlmq; 
     }else if (info.iurl   != "undefined"){      vidInfo.thumbnail   = info.iurl; 
@@ -234,7 +234,8 @@ function merge(vidPath, audioPath, finishedVidPath){
     progBarTxt("Merging");
     console.log("merging");
   });
-  //TODO: #Issue This is where the the windows ffmpeg error occurs (it doesnt like weird filenames)
+  //TODO: #Issue This is where the the windows ffmpeg error occurs (it doesnt like weird filenames) 
+  //specific link:  https://www.youtube.com/watch?v=Fzog2-lkOds
   vidMerge.on('error', (err) => {console.log('An error occurred: ' + err);});
   vidMerge.on('end', () => {
     console.log('Final video created!');
@@ -278,7 +279,7 @@ function clean(path){
 };
 
 //Enabling Drag and Drop for Links
-//TODO: need to finish
+//TODO: need to finish drag and drop feature
 //EXPERIMENTAL
 ipcRenderer.on('dragNdrop', function (url){
   const tmpDir = '/tmp/youtube-dl-';
